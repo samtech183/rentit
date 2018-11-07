@@ -14,7 +14,8 @@
      echo $dayc;
 
     
-
+   //connecting to database
+     
   	$db=mysqli_connect('localhost','root','','registration');
     $bus_query = "SELECT * FROM  bus where  Fromm='$fromstation' and Too ='$tostation'";
     $result = mysqli_query($db, $bus_query);
@@ -33,10 +34,8 @@
             //"SELECT * FROM days WHERE day='$dayc' and Busid='$row['Busid']'";
             $check_result = mysqli_query($db, $check_query);
             $check_no=mysqli_num_rows($check_result);
-            if($check_no==0){
-
+            if($check_no==0)
           //echo("<h1> bus id " .$row['busid']. "</h1>" );
-
                  echo("<tr align =\"left\"><td>".$row['Busid']."</td><td>"
                 .$date. "</td><td>" .$row['Fromm']. "</td><td>" .$row['Too']. "</td><td>" .$row['Fare']. "</td><td>".$row['Seats']."</td></tr>");
             }
@@ -48,7 +47,7 @@
    	echo("</tbody></table>");
    }
    else{
-    echo "chutia kata" ;
+    echo "naa " ;
    }
    if($flag==0){
    	echo '<p> NO BUS FOUND </p>';
